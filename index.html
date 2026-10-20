@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | To-Do App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <header class="header">
+            <div>
+                <p class="subtitle">YOUR PERSONAL PRODUCTIVITY SPACE</p>
+                <h1>TaskFlow <span>✓</span></h1>
+                <p class="description">
+                    Organize your day. Accomplish your goals.
+                </p>
+            </div>
+
+            <div class="date-box">
+                <span id="day"></span>
+                <strong id="date"></strong>
+            </div>
+        </header>
+
+        <section class="stats">
+            <div class="stat-card">
+                <span>Total Tasks</span>
+                <h2 id="totalTasks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Completed</span>
+                <h2 id="completedTasks">0</h2>
+            </div>
+
+            <div class="stat-card">
+                <span>Pending</span>
+                <h2 id="pendingTasks">0</h2>
+            </div>
+        </section>
+
+        <section class="task-section">
+
+            <h2>My Tasks</h2>
+            <p class="section-description">
+                Small steps every day lead to big results.
+            </p>
+
+            <form id="taskForm" class="task-form">
+
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you need to do?"
+                    maxlength="150"
+                    autocomplete="off"
+                    required
+                >
+
+                <select id="priorityInput" aria-label="Task priority">
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium" selected>Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+
+                <button type="submit" id="addButton">
+                    + Add Task
+                </button>
+
+            </form>
+
+            <div class="toolbar">
+
+                <div class="filters">
+                    <button class="filter active" data-filter="all">
+                        All
+                    </button>
+
+                    <button class="filter" data-filter="pending">
+                        Pending
+                    </button>
+
+                    <button class="filter" data-filter="completed">
+                        Completed
+                    </button>
+                </div>
+
+                <span id="taskCount">0 tasks</span>
+
+            </div>
+
+            <div id="taskList" class="task-list"></div>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">📝</div>
+                <h3>No tasks yet!</h3>
+                <p>Add your first task and start being productive.</p>
+            </div>
+
+            <div class="footer-actions">
+                <span id="progressText">0% completed</span>
+
+                <button id="clearCompleted" class="clear-button">
+                    Clear Completed
+                </button>
+            </div>
+
+            <div class="progress-track">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Built with 💜 using HTML, CSS & JavaScript</p>
+            <p>CodeOrbit Tech | Full Stack Development Internship</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
